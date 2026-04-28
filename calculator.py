@@ -12,12 +12,16 @@ def divide(x, y):
         return "Error! Division by zero."
     return x / y
 
+def minus_one(x): 
+    return x - 1
+
 print("--- Python Calculator ---")
 print("Select operation:")
 print("1. Add")
 print("2. Subtract")
 print("3. Multiply")
 print("4. Divide")
+print("5. Subtract 1")
 
 while True:
     choice = input("Enter choice (1/2/3/4) or 'q' to quit: ")
@@ -46,6 +50,9 @@ while True:
         elif choice == '4':
             result = divide(num1, num2)
             print(f"{num1} / {num2} = {result}")
+
+        elif choice == '5':
+            print(f"{num1} - 1 = {minus_one(num1)}")
         
         print("-" * 20)
     else:
