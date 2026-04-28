@@ -14,7 +14,7 @@
 
 ---
 
-## **Simple Python CLI Calculator - That's not so simple**
+## **Simple Python CLI Calculator - That's not so simple--I did it again!**
 
 - A lightweight, command-line interface (CLI) calculator built with Python. This tool performs fundamental arithmetic operations with built-in error handling for a smooth user experience.
 
