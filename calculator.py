@@ -15,6 +15,10 @@ def divide(x, y):
 def minus_one(x):
     return x - 1
 
+def double(x):
+    return x * 2
+
+
 print("--- Python Calculator ---")
 print("Select operation:")
 print("1. Add")
@@ -22,6 +26,8 @@ print("2. Subtract")
 print("3. Multiply")
 print("4. Divide")
 print("5. Subtract 1")
+print("6. Double a number")
+
 
 while True:
     choice = input("Enter choice (1/2/3/4/5/6/7) or 'q' to quit: ")
@@ -63,6 +69,11 @@ while True:
 
         elif choice == '5':
             print(f"{num1} - 1 = {minus_one(num1)}")
+
+        elif choice == '6':
+            num = float(input("Enter a number: "))
+            print(f"{num} doubled = {double(num)}")
+
         
         print("-" * 20)
     else:
