@@ -12,8 +12,18 @@ def divide(x, y):
         return "Error! Division by zero."
     return x / y
 
-def minus_one(x): 
+def minus_one(x):
     return x - 1
+
+# ✅ mister_a: Modulo - returns the remainder of a division
+def modulo(x, y):
+    if y == 0:
+        return "Error! Division by zero."
+    return x % y
+
+# ✅ mister_a: Power - raises x to the power of y
+def power(x, y):
+    return x ** y
 
 print("--- Python Calculator ---")
 print("Select operation:")
@@ -22,43 +32,54 @@ print("2. Subtract")
 print("3. Multiply")
 print("4. Divide")
 print("5. Subtract 1")
+print("6. Modulo (remainder)")   # ✅ mister_a
+print("7. Power (x ^ y)")        # ✅ mister_a
 
 while True:
-    choice = input("Enter choice (1/2/3/4) or 'q' to quit: ")
+    choice = input("Enter choice (1/2/3/4/5/6/7) or 'q' to quit: ")
 
     if choice.lower() == 'q':
         print("Exiting calculator. Goodbye!")
         break
 
-    if choice in ('1', '2', '3', '4'):
-        try:
-            num1 = float(input("Enter first number: "))
-            num2 = float(input("Enter second number: "))
-        except ValueError:
-            print("Invalid input. Please enter numeric values.")
-            continue
-
-        if choice == '1':
-            print(f"{num1} + {num2} = {add(num1, num2)}")
-
-        elif choice == '2':
-            print(f"{num1} - {num2} = {subtract(num1, num2)}")
-
-        elif choice == '3':
-            print(f"{num1} * {num2} = {multiply(num1, num2)}")
-
-        elif choice == '4':
-            result = divide(num1, num2)
-            print(f"{num1} / {num2} = {result}")
-
-        elif choice == '5':
+    if choice in ('1', '2', '3', '4', '5', '6', '7'):
+        # Choice 5 only needs one number
+        if choice == '5':
+            try:
+                num1 = float(input("Enter a number: "))
+            except ValueError:
+                print("Invalid input. Please enter a numeric value.")
+                continue
             print(f"{num1} - 1 = {minus_one(num1)}")
-        
+
+        else:
+            try:
+                num1 = float(input("Enter first number: "))
+                num2 = float(input("Enter second number: "))
+            except ValueError:
+                print("Invalid input. Please enter numeric values.")
+                continue
+
+            if choice == '1':
+                print(f"{num1} + {num2} = {add(num1, num2)}")
+            elif choice == '2':
+                print(f"{num1} - {num2} = {subtract(num1, num2)}")
+            elif choice == '3':
+                print(f"{num1} * {num2} = {multiply(num1, num2)}")
+            elif choice == '4':
+                print(f"{num1} / {num2} = {divide(num1, num2)}")
+            elif choice == '6':                                         # ✅ NEW
+                print(f"{num1} % {num2} = {modulo(num1, num2)}")
+            elif choice == '7':                                         # ✅ NEW
+                print(f"{num1} ^ {num2} = {power(num1, num2)}")
+
         print("-" * 20)
     else:
+        print("Invalid Input. Please pick a number between 1 and 7.")
         print("Invalid Input. Please pick a number between 1 and 4.")
         
         print("-" * 20)
     
+        
         
         
