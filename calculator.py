@@ -76,3 +76,9 @@ while True:
         print("-" * 20)
     else:
         print("Invalid Input. Please pick a number between 1 and 7.")
+        print("Invalid Input. Please pick a number between 1 and 4.")
+        
+        print("-" * 20)
+    
+        
+        
