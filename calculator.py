@@ -18,6 +18,9 @@ def minus_one(x):
 def double(x):
     return x * 2
 
+def double(x, y):
+    return x ** y
+
 
 print("--- Python Calculator ---")
 print("Select operation:")
@@ -27,24 +30,25 @@ print("3. Multiply")
 print("4. Divide")
 print("5. Subtract 1")
 print("6. Double a number")
+print("7. Power of a number (x^y)") # added option for power function
 
 
 while True:
-    choice = input("Enter choice (1/2/3/4/5/6/7) or 'q' to quit: ")
+    choice = input("Enter choice of operation (1/2/3/4/5/6/7) or 'q' to quit: ")
 
     if choice.lower() == 'q':
         print("Exiting calculator. Goodbye!")
         break
 
-    if choice in ('1', '2', '3', '4', '5', '6', '7'):
+    if choice in ('1', '2', '3', '4', '5', '6', '7'): # added choice 7 to the valid options
         # Choice 5 only needs one number
-        if choice == '5':
+        if choice in ('5', '6', '7'): # Added choice 7 to the list of single number operations
             try:
                 num1 = float(input("Enter a number: "))
             except ValueError:
                 print("Invalid input. Please enter a numeric value.")
                 continue
-            print(f"{num1} - 1 = {minus_one(num1)}")
+           # print(f"{num1} - 1 = {minus_one(num1)}") # commented out since the operation will be handled in the main logic below
 
         else:
             try:
